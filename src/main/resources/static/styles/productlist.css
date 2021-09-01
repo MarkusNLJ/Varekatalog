@@ -1,0 +1,68 @@
+.grid-container {
+    display: grid;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    margin-bottom: -35px;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 150px;
+    width: 80%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.cool-text{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-family: "Malgun Gothic";
+    font-size: 75px;
+    font-weight: bold;
+    margin-bottom: -20px;
+}
+
+.delete-button{
+    font-size: 20px;
+    padding: 10px;
+    border: red;
+    background-color: red;
+    border-radius: 30px;
+    color: black;
+    text-decoration-line: none;
+}
+
+.update-button{
+    font-size: 20px;
+    padding: 10px;
+    border: royalblue;
+    background-color: royalblue;
+    border-radius: 30px;
+    color: black;
+    text-decoration-line: none;
+}
+
+.create-button{
+    font-size: 20px;
+    padding: 10px;
+    border: green;
+    background-color: green;
+    border-radius: 30px;
+    color: black;
+    text-decoration-line: none;
+    display: flex;
+    width: 20%;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link th:href="@{/styles/productlist.css}" rel="stylesheet">
+    <link th:href="|@{${stylesheet}}|" rel="stylesheet">
+    <meta charset="UTF-8" >
+    <title>WebShop</title>
+</head>
+<body>
+<h1 class="cool-text">Cool web shop 😎</h1>
+<section class="grid-container">
+    <ul th:each="product : ${allProducts}">
+        <li class="grid-item">
+            <h2 th:text="|${product.getName}|"></h2>
+            <p th:text="|${product.getPrice}.- kr|"></p>
+            <a th:href="|/update/${product.getId()}|" class="update-button">Opdater produkt</a>
+            <a th:href="|/delete-product/${product.getId()}|" class="delete-button">Slet produkt</a>
+        </li>
+    </ul>
+</section>
+<a th:href="|/product-form/|" class="create-button">opret nyt produkt</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>UpdateProduct</title>
+</head>
+<body>
+<section>
+    <h1>Opdater produkt</h1>
+</section>
+<section>
+    <form action="/update-product/" method="post" class="submitField">
+        <label for="productID"></label><br>
+        <input type="number" id="productID" name="productID" th:value="${productID}" hidden>
+
+        <label for="name" th:text="|Product: ${product.getName}|"></label><br>
+        <input type="text" id="name" name="name" placeholder="Navn" required><br>
+
+        <label for="price" th:text="|Før pris: ${product.getPrice}"></label><br>
+        <input type="number" id="price" name="price" placeholder="DKK" required><br>
+
+        <button>Bekræft</button>
+    </form>
+</section>
+</body>
+</html>
