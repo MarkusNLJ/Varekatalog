@@ -13,8 +13,10 @@
         <li class="grid-item">
             <h2 th:text="|${product.getName}|"></h2>
             <p th:text="|${product.getPrice}.- kr|"></p>
-            <a th:href="|/update/${product.getId()}|" class="update-button">Opdater produkt</a>
-            <a th:href="|/delete-product/${product.getId()}|" class="delete-button">Slet produkt</a>
+            <section class="button-section">
+                <a th:href="|/update/${product.getId()}|" class="update-button">Opdater produkt</a>
+                <a th:href="|/delete-product/${product.getId()}|" class="delete-button">Slet produkt</a>
+            </section>
         </li>
     </ul>
 </section>

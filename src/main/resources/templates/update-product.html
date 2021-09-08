@@ -14,10 +14,10 @@
         <input type="number" id="productID" name="productID" th:value="${productID}" hidden>
 
         <label for="name" th:text="|Product: ${product.getName}|"></label><br>
-        <input type="text" id="name" name="name" placeholder="Navn" required><br>
+        <input type="text" id="name" name="name" th:value="${product.getName}" required><br>
 
         <label for="price" th:text="|Før pris: ${product.getPrice}"></label><br>
-        <input type="number" id="price" name="price" placeholder="DKK" required><br>
+        <input type="number" id="price" name="price" th:value="${product.getPrice}" required><br>
 
         <button>Bekræft</button>
     </form>

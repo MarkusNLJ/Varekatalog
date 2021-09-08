@@ -1,22 +1,23 @@
 .grid-container {
     display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     padding: 10px;
+    text-align: center;
+}
+
+body{
+    background-color: pink;
 }
 
 .grid-item {
     background-color: rgba(255, 255, 255, 0.6);
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    margin-bottom: -35px;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 150px;
-    width: 80%;
+    border: 2px solid black;
+    height: 300px;
+    width: 365px;
     list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-evenly;
     background-color: lightgray;
 }
 
@@ -24,18 +25,22 @@
     display: flex;
     justify-content: center;
     align-self: center;
+    margin-top: -20px;
+    width: 100.8%;
+    margin-left: -8px;
     font-family: "Malgun Gothic";
     font-size: 75px;
     font-weight: bold;
-    margin-bottom: -20px;
+    background-color: white;
+    border-bottom: solid black 2px;
 }
 
 .delete-button{
     font-size: 20px;
     padding: 10px;
-    border: red;
     background-color: red;
-    border-radius: 30px;
+    border: solid black 2px;
+    width: 50%;
     color: black;
     text-decoration-line: none;
 }
@@ -43,11 +48,21 @@
 .update-button{
     font-size: 20px;
     padding: 10px;
-    border: royalblue;
+    border: solid black 2px;
     background-color: royalblue;
-    border-radius: 30px;
     color: black;
     text-decoration-line: none;
+    width: 50%;
+}
+
+.button-section{
+    margin-top: 163px;
+    border: solid black 2px;
+    width: 100%;
+    margin-left: -2px;
+    height: 50px;
+    display: flex;
+    justify-self: auto;
 }
 
 .create-button{

@@ -48,5 +48,5 @@ public class WebShopController {
         service.updateProduct(productID, name, price);
         return "redirect:/web-shop";
     }
-    // Mangler delete, update og styling :)
+    // Mangler styling :)
 }
