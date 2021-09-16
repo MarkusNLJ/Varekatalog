@@ -18,7 +18,7 @@ public class ProductRep {
         try {
             prop.load(new FileInputStream("src/main/resources/application.properties"));
             this.url = prop.getProperty("url");
-            this.user = prop.getProperty("user");
+            this.user = prop.getProperty("username");
             this.password = prop.getProperty("password");
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,7 +36,7 @@ public class ProductRep {
 
         try {
             Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM products");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Catalog");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Product tmp = new Product(
@@ -63,7 +63,7 @@ public class ProductRep {
         }
         try {
             Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM products where product_id=?");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Catalog where id=?");
             stmt.setInt(1, productID);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -91,7 +91,7 @@ public class ProductRep {
 
         try{
             Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO products (`name`, price) VALUES (?,?)");
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO Catalog (WareName, WarePrice) VALUES (?,?)");
 
             stmt.setString(1, product.getName());
             stmt.setInt(2, product.getPrice());
@@ -112,7 +112,7 @@ public class ProductRep {
 
         try{
             Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement stmt = conn.prepareStatement("UPDATE products SET `name` = ? , price = ? WHERE product_id = ?");
+            PreparedStatement stmt = conn.prepareStatement("UPDATE Catalog SET WareName = ? , WarePrice = ? WHERE id = ?");
 
             stmt.setString(1, newName);
             stmt.setInt(2, newPrice);
@@ -135,7 +135,7 @@ public class ProductRep {
 
         try {
             Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement stmt = conn.prepareStatement("Delete FROM products where product_id=?");
+            PreparedStatement stmt = conn.prepareStatement("Delete FROM Catalog where id=?");
             stmt.setInt(1, productID);
             stmt.execute();
             conn.close();

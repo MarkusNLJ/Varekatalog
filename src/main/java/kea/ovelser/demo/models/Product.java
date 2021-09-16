@@ -1,12 +1,21 @@
 package kea.ovelser.demo.models;
 
+import javax.persistence.*;
+
+@Entity
 public class Product {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@Column(name = "id", nullable = false, updatable = false)
+    private long id;
+    //@Size( , message="Navnet må højst være 20 tegn") kan bestemme min og max størrelse på string
     private String name;
+    //@Min() minimum beløb tal
     private int price;
 
 
-    public Product(int id, String name, int price){
+
+    public Product(long id, String name, int price){
         this.id = id;
         this.name = name;
         this.price = price;
@@ -17,8 +26,12 @@ public class Product {
         this.price = price;
     }
 
+    public Product() {
+
+    }
+
     //---------------------------||Getters||---------------------------//
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -31,7 +44,7 @@ public class Product {
     }
     //---------------------------||Setters||---------------------------//
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
